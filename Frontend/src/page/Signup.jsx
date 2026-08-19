@@ -11,6 +11,10 @@ export default function Signup({ setActiveTab, setUser, darkMode }) {
     confirmPassword: ''
   });
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSignup = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.password) {
@@ -27,11 +31,11 @@ export default function Signup({ setActiveTab, setUser, darkMode }) {
     setUser({
       name: formData.name,
       email: formData.email,
-      phone: formData.phone || "0746789780",
-      address: formData.address || "Matale, Sri Lanka"
+      phone: formData.phone || "0755401869",
+      address: formData.address || "Ampara, Sri Lanka"
     });
 
-    alert("Account created successfully! Welcome to Foodgo.");
+    alert("Account created successfully!");
     setActiveTab('home');
   };
 
@@ -42,11 +46,11 @@ export default function Signup({ setActiveTab, setUser, darkMode }) {
           F
         </div>
         <h2 className="text-3xl font-black text-stone-900 dark:text-stone-100">Create Account</h2>
-        <p className="text-xs text-stone-500 mt-1">Join Foodgo for exclusive deals and fastest food delivery</p>
+        <p className="text-xs text-stone-500 mt-1">Join Foodgo to get discounts and fast checkout</p>
       </div>
 
       <div className={`p-6 sm:p-8 rounded-3xl border ${darkMode ? 'bg-stone-900 border-stone-800' : 'bg-white border-red-100 shadow-xl'}`}>
-        <form onSubmit={handleSignup} className="space-y-3.5">
+        <form onSubmit={handleSignup} className="space-y-4">
           <div>
             <label className="text-xs font-bold uppercase text-stone-500 flex items-center gap-1.5 mb-1">
               <User size={14} />
@@ -54,13 +58,13 @@ export default function Signup({ setActiveTab, setUser, darkMode }) {
             </label>
             <input
               type="text"
+              name="name"
               required
               placeholder="Amanda Hiruni"
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className={`w-full p-2.5 rounded-xl border text-sm outline-none ${
-                darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
-              }`}
+              onChange={handleChange}
+              className={`w-full p-3 rounded-xl border text-sm outline-none ${darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
+                }`}
             />
           </div>
 
@@ -71,13 +75,13 @@ export default function Signup({ setActiveTab, setUser, darkMode }) {
             </label>
             <input
               type="email"
+              name="email"
               required
               placeholder="you@example.com"
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className={`w-full p-2.5 rounded-xl border text-sm outline-none ${
-                darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
-              }`}
+              onChange={handleChange}
+              className={`w-full p-3 rounded-xl border text-sm outline-none ${darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
+                }`}
             />
           </div>
 
@@ -85,18 +89,19 @@ export default function Signup({ setActiveTab, setUser, darkMode }) {
             <div>
               <label className="text-xs font-bold uppercase text-stone-500 flex items-center gap-1.5 mb-1">
                 <Phone size={14} />
-                Phone
+                Phone Number
               </label>
               <input
                 type="text"
-                placeholder="074 678 9780"
+                name="phone"
+                placeholder="0746789780"
                 value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className={`w-full p-2.5 rounded-xl border text-sm outline-none ${
-                  darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
-                }`}
+                onChange={handleChange}
+                className={`w-full p-3 rounded-xl border text-sm outline-none ${darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
+                  }`}
               />
             </div>
+
             <div>
               <label className="text-xs font-bold uppercase text-stone-500 flex items-center gap-1.5 mb-1">
                 <MapPin size={14} />
@@ -104,12 +109,12 @@ export default function Signup({ setActiveTab, setUser, darkMode }) {
               </label>
               <input
                 type="text"
+                name="address"
                 placeholder="Matale"
                 value={formData.address}
-                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                className={`w-full p-2.5 rounded-xl border text-sm outline-none ${
-                  darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
-                }`}
+                onChange={handleChange}
+                className={`w-full p-3 rounded-xl border text-sm outline-none ${darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
+                  }`}
               />
             </div>
           </div>
@@ -121,13 +126,13 @@ export default function Signup({ setActiveTab, setUser, darkMode }) {
             </label>
             <input
               type="password"
+              name="password"
               required
               placeholder="••••••••"
               value={formData.password}
-              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              className={`w-full p-2.5 rounded-xl border text-sm outline-none ${
-                darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
-              }`}
+              onChange={handleChange}
+              className={`w-full p-3 rounded-xl border text-sm outline-none ${darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
+                }`}
             />
           </div>
 
@@ -138,19 +143,19 @@ export default function Signup({ setActiveTab, setUser, darkMode }) {
             </label>
             <input
               type="password"
+              name="confirmPassword"
               required
               placeholder="••••••••"
               value={formData.confirmPassword}
-              onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-              className={`w-full p-2.5 rounded-xl border text-sm outline-none ${
-                darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
-              }`}
+              onChange={handleChange}
+              className={`w-full p-3 rounded-xl border text-sm outline-none ${darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
+                }`}
             />
           </div>
 
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 mt-2 py-3 bg-red-500 hover:bg-red-600 active:scale-95 text-white font-bold rounded-xl text-sm shadow-md transition cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 py-3 bg-red-500 hover:bg-red-600 active:scale-95 text-white font-bold rounded-xl text-sm shadow-md transition cursor-pointer"
           >
             <UserPlus size={16} />
             <span>Create Account</span>
@@ -161,9 +166,10 @@ export default function Signup({ setActiveTab, setUser, darkMode }) {
           <span>Already have an account? </span>
           <button
             onClick={() => setActiveTab('login')}
-            className="font-bold text-red-500 hover:underline cursor-pointer"
+            className="font-bold text-red-500 hover:underline cursor-pointer inline-flex items-center gap-1"
           >
-            Sign in here
+            <ArrowLeft size={12} />
+            Back to Sign In
           </button>
         </div>
       </div>
