@@ -25,11 +25,11 @@ export default function Login({ setActiveTab, setUser, darkMode }) {
   };
 
   const handleQuickDemo = () => {
-    setEmail("amandahirun@gmail.com");
+    setEmail("amanda@gmail.com");
     setPassword("password123");
     setUser({
       name: "Amanda Hiruni",
-      email: "amandahirun@gmail.com",
+      email: "amanda@gmail.com",
       phone: "0746789780",
       address: "Dambulla rd, Matale"
     });
@@ -57,7 +57,7 @@ export default function Login({ setActiveTab, setUser, darkMode }) {
             <input
               type="email"
               required
-              placeholder="you@example.com"
+              placeholder="amanda@gmail.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className={`w-full p-3 rounded-xl border text-sm outline-none ${

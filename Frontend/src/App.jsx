@@ -26,7 +26,7 @@ export default function App() {
 
   const [user, setUser] = useState({
     name: "Amanda Hiruni",
-    email: "amandahirun@gmail.com",
+    email: "amanda@gmail.com",
     phone: "0746789780",
     address: "Dambulla rd, Matale"
   });

@@ -57,7 +57,7 @@ export default function Contact({ darkMode }) {
             </div>
             <div>
               <h4 className="font-bold text-sm text-stone-900 dark:text-stone-100">Email Us</h4>
-              <p className="text-xs text-stone-500 mt-0.5">foodgo@gmail.com</p>
+              <p className="text-xs text-stone-500 mt-0.5">amanda@gmail.com</p>
             </div>
           </div>
 

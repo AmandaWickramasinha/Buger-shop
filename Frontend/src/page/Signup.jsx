@@ -77,7 +77,7 @@ export default function Signup({ setActiveTab, setUser, darkMode }) {
               type="email"
               name="email"
               required
-              placeholder="you@example.com"
+              placeholder="amanda@gmail.com"
               value={formData.email}
               onChange={handleChange}
               className={`w-full p-3 rounded-xl border text-sm outline-none ${darkMode ? 'bg-stone-800 border-stone-700 text-stone-100' : 'bg-stone-50 border-stone-200 text-stone-800'
